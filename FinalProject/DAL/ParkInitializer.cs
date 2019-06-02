@@ -41,21 +41,22 @@ namespace FinalProject.DAL
             context.SaveChanges();
             var orders = new List<Order>
             {
-                new Order{MemberID=1,TicketID=0001,Amount=Amount.B},
-                new Order{MemberID=1,TicketID=0004,Amount=Amount.A},
-                new Order{MemberID=1,TicketID=0005,Amount=Amount.A},
-                new Order{MemberID=2,TicketID=0002,Amount=Amount.B},
-                new Order{MemberID=2,TicketID=0001,Amount=Amount.C},
-                new Order{MemberID=3,TicketID=0001,Amount=Amount.B},
-                new Order{MemberID=3,TicketID=0003,Amount=Amount.B},
-                new Order{MemberID=4,TicketID=0006,Amount=Amount.F},
-                new Order{MemberID=5,TicketID=0001,Amount=Amount.D},
-                new Order{MemberID=6,TicketID=0004,Amount=Amount.B},
-                new Order{MemberID=7,TicketID=0006,Amount=Amount.E},
-                new Order{MemberID=8,TicketID=0001,Amount=Amount.E},
-                new Order{MemberID=8,TicketID=0004,Amount=Amount.C},
-                new Order{MemberID=8,TicketID=0005,Amount=Amount.B},
-                new Order{MemberID=9,TicketID=0002,Amount=Amount.F}
+                new Order{MemberID=1,TicketID=0001,Amount2=(int)Amount.B},
+                new Order{MemberID=1,TicketID=0004,Amount2=(int)Amount.A},
+                new Order{MemberID=1,TicketID=0005,Amount2=(int)Amount.A},
+                new Order{MemberID=2,TicketID=0002,Amount2=(int)Amount.B},
+                new Order{MemberID=2,TicketID=0001,Amount2=(int)Amount.C},
+                new Order{MemberID=3,TicketID=0001,Amount2=(int)Amount.B},
+                new Order{MemberID=3,TicketID=0003,Amount2=(int)Amount.B},
+                new Order{MemberID=4,TicketID=0006,Amount2=(int)Amount.F},
+                new Order{MemberID=5,TicketID=0001,Amount2=(int)Amount.D},
+                new Order{MemberID=5,TicketID=0001,Amount2=(int)Amount.D},
+                new Order{MemberID=6,TicketID=0004,Amount2=(int)Amount.B},
+                new Order{MemberID=7,TicketID=0006,Amount2=(int)Amount.E},
+                new Order{MemberID=8,TicketID=0001,Amount2=(int)Amount.E},
+                new Order{MemberID=8,TicketID=0004,Amount2=(int)Amount.C},
+                new Order{MemberID=8,TicketID=0005,Amount2=(int)Amount.B},
+                new Order{MemberID=9,TicketID=0002,Amount2=(int)Amount.F}
             };
             orders.ForEach(s => context.Orders.Add(s));
             context.SaveChanges();

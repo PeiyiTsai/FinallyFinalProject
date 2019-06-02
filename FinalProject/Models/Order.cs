@@ -19,5 +19,6 @@ namespace FinalProject.Models
 
         public virtual Member Member { get; set; }
         public virtual Ticket Ticket { get; set; }
-        }
+        public int Amount2 { get; internal set; }
+    }
     }
