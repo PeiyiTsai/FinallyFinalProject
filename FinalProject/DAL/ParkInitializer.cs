@@ -11,7 +11,7 @@ namespace FinalProject.DAL
         protected override void Seed(ParkContext context)
         {
             var members = new List<Member>
-            {
+            { 
                 new Member{MemberID=1,Name="吳世昌", Sex="Boy",Phone="0912345678",Address="台北市松山區中山路123號",OrderDate=DateTime.Parse("2019-05-31")},
                 new Member{MemberID=2,Name="余宜臻", Sex="Girl",Phone="0979555666",Address="台南市安南區西門路43號",OrderDate=DateTime.Parse("2019-05-31")},
                 new Member{MemberID=3,Name="何佳琪", Sex="Girl",Phone="0912124358",Address="高雄市旗津區中港路87號",OrderDate=DateTime.Parse("2019-06-11")},
