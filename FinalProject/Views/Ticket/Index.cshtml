@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FinalProject.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>票別</h2>
+
+<p>
+    @Html.ActionLink("新增票別", "Create")
+</p>
+<table class="table">
+    <tr class="bg-warning text-white">
+        <th>
+            @Html.DisplayNameFor(model =>model.TicketID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <th>
+            @Html.DisplayFor(modelItem => item.TicketID)
+        </th>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("修改", "Edit", new { id = item.TicketID }) |
+
+            @Html.ActionLink("刪除", "Delete", new { id = item.TicketID })
+        </td>
+    </tr>
+}
+
+</table>

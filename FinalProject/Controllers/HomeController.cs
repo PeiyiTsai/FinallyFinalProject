@@ -19,7 +19,7 @@ namespace FinalProject.Controllers
         public ActionResult About()
         {
             IQueryable<OrderDateGroup> data = from member in db.Members
-                                                   group member by member.OrderDate into dateAmount
+                                                   group member by member.MemberDate into dateAmount
                                               select new OrderDateGroup()
                                                    {
                                                        OrderDate = dateAmount.Key,

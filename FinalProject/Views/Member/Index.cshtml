@@ -3,13 +3,13 @@
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
-    ViewBag.Title = "Members";
+    ViewBag.Title = "會員資料";
 }
 
 <h2>會員資料</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新增會員", "Create")
 </p>
 @using (Html.BeginForm())
 {
@@ -22,7 +22,7 @@
 }
 <table class="table">
 
-    <tr>
+    <tr class="bg-warning text-white">
         <th>
             @Html.ActionLink("姓名", "Index", new { sortOrder = ViewBag.NameSortParm })
         </th>
@@ -30,7 +30,7 @@
         <th>連絡電話</th>
         <th>地址</th>
         <th>
-            @Html.ActionLink("會員加入日期", "Index", new { sortOrder = ViewBag.DateSortParm })
+            @Html.ActionLink("會員購買日期", "Index", new { sortOrder = ViewBag.DateSortParm })
         </th>
         <th></th>
     </tr>
@@ -51,12 +51,12 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderDate)
+                @Html.DisplayFor(modelItem => item.MemberDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MemberID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MemberID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MemberID })
+                @Html.ActionLink("修改", "Edit", new { id = item.MemberID }) |
+                @Html.ActionLink("詳細資料", "Details", new { id = item.MemberID }) |
+                @Html.ActionLink("刪除", "Delete", new { id = item.MemberID })
             </td>
         </tr>
     }

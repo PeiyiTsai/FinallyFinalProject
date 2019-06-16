@@ -47,10 +47,10 @@ namespace FinalProject.Controllers
                     members = members.OrderByDescending(s => s.Name);
                     break;
                 case "Date":
-                    members = members.OrderBy(s => s.OrderDate);
+                    members = members.OrderBy(s => s.MemberDate);
                     break;
                 case "date_desc":
-                    members = members.OrderByDescending(s => s.OrderDate);
+                    members = members.OrderByDescending(s => s.MemberDate);
                     break;
                 default:
                     members = members.OrderBy(s => s.Name);
@@ -88,7 +88,7 @@ namespace FinalProject.Controllers
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MemberID,Name,Sex,Phone,Address,OrderDate")] Member member)
+        public ActionResult Create([Bind(Include = "MemberID,Name,Sex,Sex2,Phone,Address,MemberDate")] Member member)
         {
             try
             {
