@@ -126,31 +126,19 @@ namespace FinalProject.Controllers
         // POST: Member/Edit/5
         // 若要免於過量張貼攻擊，請啟用想要繫結的特定屬性，如需
         // 詳細資訊，請參閱 https://go.microsoft.com/fwlink/?LinkId=317598。
-        [HttpPost, ActionName("Edit")]
+        
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPost(int? id)
+        public ActionResult Edit([Bind(Include = "MemberID,Name,Sex,Sex2,Phone,Address,MemberDate")] Member member)
         {
-            if (id == null)
+            if (ModelState.IsValid)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                db.Entry(member).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
-            var memberToUpdate = db.Members.Find(id);
-            if (TryUpdateModel(memberToUpdate, "",
-               new string[] { "Name",  "OrderDate" }))
-            {
-                try
-                {
-                    db.SaveChanges();
-
-                    return RedirectToAction("Index");
-                }
-                catch (DataException /* dex */)
-                {
-                    //Log the error (uncomment dex variable name and add a line here to write a log.
-                    ModelState.AddModelError("", "無法修改, 請再試一次! 若持續錯誤, 請洽詢系統管理者! ");
-                }
-            }
-            return View(memberToUpdate);
+           
+            return View(member);
         }
 
         // GET: Member/Delete/5
