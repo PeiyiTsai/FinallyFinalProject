@@ -3,41 +3,41 @@
 @{
     ViewBag.Title = "Details";
 }
+<body background="http://sheng.phy.nknu.edu.tw/shengwjs08MY/back-133.gif">
+    <h2>訂單詳細資料</h2>
 
-<h2>訂單詳細資料</h2>
+    <div>
 
-<div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Member.Name)
+            </dt>
 
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Member.Name)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Member.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Member.Name)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ticket.Type)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ticket.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Ticket.Type)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Ticket.Type)
+            </dd>
 
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Amount)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Amount)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Amount)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Amount)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("修改", "Edit", new { id = Model.OrderID }) |
-    @Html.ActionLink("返回訂單資料", "Index")
-</p>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("修改", "Edit", new { id = Model.OrderID }) |
+        @Html.ActionLink("返回訂單資料", "Index")
+    </p>

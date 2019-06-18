@@ -3,62 +3,64 @@
 @{
     ViewBag.Title = "刪除會員資料";
 }
+<body background="http://sheng.phy.nknu.edu.tw/shengwjs08MY/back-120.gif">
 
-<h2>刪除會員資料</h2>
-<p class="error">@ViewBag.ErrorMessage</p>
-<h4>親愛的管理員您確定要刪除這位 『會員』 嗎？</h4>
-<div>
+    <h2>刪除會員資料</h2>
+    <p class="error">@ViewBag.ErrorMessage</p>
+    <h4>親愛的管理員您確定要刪除這位 『會員』 嗎？</h4>
+    <div>
 
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sex)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Sex)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sex)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MemberDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.MemberDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MemberDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.MemberDate)
+            </dd>
 
-    </dl>
+        </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="刪除" class="btn btn-default" /> |
-            @Html.ActionLink("返回會員資料", "Index")
-        </div>
-    }
-</div>
+            <div class="form-actions no-color">
+                <input type="submit" value="刪除" class="btn btn-danger" /> |
+                @Html.ActionLink("返回會員資料", "Index")
+            </div>
+        }
+    </div>

@@ -5,65 +5,66 @@
 @{
     ViewBag.Title = "會員資料";
 }
+<body background="http://sheng.phy.nknu.edu.tw/shengwjs08MY/back-120.gif">
 
-<h2>會員資料</h2>
-<p>
-    @Html.ActionLink("新增會員", "Create")
-</p>
-@using (Html.BeginForm())
-{
-
-    <p>
-        依姓名、地址搜尋: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-        <input type="submit" value="查詢" />
-    </p>
-
-
-}
-<table class="table">
-
-    <tr class="bg-warning text-white">
-        <th>
-            @Html.ActionLink("姓名", "Index", new { sortOrder = ViewBag.NameSortParm })
-        </th>
-        <th>性別</th>
-        <th>連絡電話</th>
-        <th>地址</th>
-        <th>
-            @Html.ActionLink("會員購買日期", "Index", new { sortOrder = ViewBag.DateSortParm })
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    <h2>會員資料</h2>
+    <h4>
+        @Html.ActionLink("新增會員", "Create")
+    </h4>
+    @using (Html.BeginForm())
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sex)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MemberDate)
-            </td>
-            <td>
-                @Html.ActionLink("修改", "Edit", new { id = item.MemberID }) |
-                @Html.ActionLink("詳細資料", "Details", new { id = item.MemberID }) |
-                @Html.ActionLink("刪除", "Delete", new { id = item.MemberID })
-            </td>
-        </tr>
+
+        <p>
+            依姓名、地址搜尋: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input type="submit" class="btn btn-danger" value="查詢" />
+        </p>
+
+
     }
+    <table class="table">
 
-</table>
-<br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        <tr class="bg-warning text-white">
+            <th>
+                @Html.ActionLink("姓名", "Index", new { sortOrder = ViewBag.NameSortParm })
+            </th>
+            <th>性別</th>
+            <th>連絡電話</th>
+            <th>地址</th>
+            <th>
+                @Html.ActionLink("會員購買日期", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+            <th></th>
+        </tr>
 
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemberDate)
+                </td>
+                <td>
+                    @Html.ActionLink("修改", "Edit", new { id = item.MemberID }) |
+                    @Html.ActionLink("詳細資料", "Details", new { id = item.MemberID }) |
+                    @Html.ActionLink("刪除", "Delete", new { id = item.MemberID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

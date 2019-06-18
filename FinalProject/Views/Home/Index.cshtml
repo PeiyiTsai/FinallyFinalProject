@@ -2,37 +2,60 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>劍湖山遊樂園</h1>
-    <p class="lead">
-        歡迎來到我們的樂園～
-        請各位遊客盡情玩耍 >.<
+<body background="https://tse2.mm.bing.net/th?id=OIP.xGWcO07eFb61A2zJZqyokwHaGF&pid=15.1&P=0&w=204&h=169">
 
-    </p>
-    <!-- <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>-->
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>因為有夢。築夢成真</h2>
-        <p>
-            曾經，耐斯企業集團創辦人陳鏡村先生昆仲的老家--
-            雲林縣古坑鄉永光村只是一處默默無聞的小農村，即使人們取道此地，
-            頻頻進出草嶺，但匆匆來去，永光鄉間的青山翠谷，始終寂寂無名，
-            不過就是一片乏人問津的路過景色而已。......
-        </p>
-        <p><a class="btn btn-primary" href="http://fancyworld.janfusun.com.tw/about.aspx?DataKey=1&Title=%E4%B8%BB%E9%A1%8C%E6%A8%82%E5%9C%92%E4%BA%8B%E7%B4%80">更多關於 &raquo;</a></p>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="w3-content w3-section container">
+                <img class="mySlides" src="https://lh3.googleusercontent.com/VkdHAG7t8mrBuIGIzCuR9kxBcHJfM1-9UDVACzQ8GbBszYjuUXscerOAMDhz0Zf8NdDCIi9KW5B4dFz-L2Gsqqk-_y3Xzn9QainHwA4M6tgj1JOxolMGS3z-0yw2gVlUn2MAPrED8HnqE6C49jT6JJ12l1fzW2knb6ghnu6KedUkMwZwxKkvVnOXbVndxw3KAIQ0N-57r-hlbV_vO5W5Z88QxdGI8Zqr9R9OWycyfsXp2hITFOhb4sTJ6IoqYNoH_UW_MxCzcKBaY6bR6lRnmfgoSY2RzciqHoqaJQZ6Ayo4LyJ2D-jD3QxTTacE9yYYcGFrfexMwgoGoEpMfjN5g4nL-_vmRR6JLNIlrlktzhvXKNvFNnHP-l6SspvfXFuBnFJlFx1vAma_X36nwpgMiDG6Th3k9ftXRyGzou-OMFGD9pk7TSWbDLtsEkkYChHsFUPvnCL1uq--c2bsSZ73rUwUmhtmeswiLLdBnKPbsacmjbbS3b6pTZcqwGBNga8Cq-fgFWUbg1v3b9l2LOaMZb8bXNSfhuwDEHMA1jZhve30QE5izL5SFWkkLDa2WrOZDytW0VJovG47hyqRey-w9ftv8iTpZV6sGXuywqIasHUZtomtNFtaiBO4Q5zjztI=w2621-h1749-no" style="width:950px" height="500px">
+                <img class="mySlides" src="http://fancyworld.janfusun.com.tw/img/Play/NEW_PIC/17070113370803.jpg" style="width:950px" height="500px">
+                <img class="mySlides" src="https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630,f_auto/w_80,x_15,y_15,g_south_west,l_klook_water/activities/andewdgf59m0kijlcpbr/%E5%8A%8D%E6%B9%96%E5%B1%B1%E4%B8%96%E7%95%8C%E4%B8%BB%E9%A1%8C%E6%A8%82%E5%9C%92%EF%BC%88%E5%90%AB%E6%8E%A5%E9%80%81%EF%BC%89.jpg" style="width:950px" height="500px">
+                <img class="mySlides" src="https://ct.yimg.com/xd/api/res/1.2/HYAjiNWFwXCvEkT.67alvw--/YXBwaWQ9eXR3YXVjdGlvbnNlcnZpY2U7aD00NDk7cT04NTtyb3RhdGU9YXV0bzt3PTYwMA--/https://s.yimg.com/ob/image/032f073c-8238-4afb-8ceb-11608059ca3a.jpg" style="width:950px" height="500px">
+                <img class="mySlides" src="http://www.chinadaily.tw/wp-content/uploads/2017/01/15965214_10154765718176425_2168412178131296506_n.jpg" style="width:950px" height="500px">
+                <img class="mySlides" src="http://sp.bilab.pro/DocLib19/%E5%8A%8D%E6%B9%96%E5%B1%B1%E4%B8%96%E7%95%8C4.jpg" style="width:1000px" height="500px">
+                <img class="mySlides" src="https://img.misshuan.tw/web_upload/20180812020432_100.jpg" style="width:950px" height="500px">
+            </div>
+        </div>
     </div>
+    <script>
+        var myIndex = 0;
+        carousel();
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) {
+                myIndex = 1
+            }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2500); // Change image every 2.5 seconds
+        }
+    </script>
 
-    <div class="col-md-4">
-        <h2>深耕雲林。接軌國際</h2>
-        <p>劍湖山世界積極因應國際觀光客與大陸人士來台質與量的觀光需求，遊樂業界第一品牌的『劍湖山世界主題樂園』，隆重推出高價值與高品質五星級的『劍湖山渡假大飯店』，以發展商務休閒、觀光旅遊與購物娛樂，深耕雲林接軌國際。</p>
-        <p><a class="btn btn-primary" href="http://fancyworld.janfusun.com.tw/about.aspx?DataKey=4&Title=Hato%E5%AE%B6%E6%97%8F">關於劍湖山家族 &raquo;</a></p>
-    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>因為有夢。築夢成真</h2>
+            <p>
+                曾經，耐斯企業集團創辦人陳鏡村先生昆仲的老家--
+                雲林縣古坑鄉永光村只是一處默默無聞的小農村，即使人們取道此地，
+                頻頻進出草嶺，但匆匆來去，永光鄉間的青山翠谷，始終寂寂無名，
+                不過就是一片乏人問津的路過景色而已。......
+            </p>
+            <p><a class="btn btn-primary" href="http://fancyworld.janfusun.com.tw/about.aspx?DataKey=1&Title=%E4%B8%BB%E9%A1%8C%E6%A8%82%E5%9C%92%E4%BA%8B%E7%B4%80">更多關於 &raquo;</a></p>
+        </div>
 
-    <div class="col-md-4">
-        <h2>關於企業</h2>
-        <p>劍湖山渡假大飯店</p>
-        <p><a class="btn btn-primary" href="http://www.jrhotel.com.tw/">飯店詳情 &raquo;</a></p>
+        <div class="col-md-4">
+            <h2>深耕雲林。接軌國際</h2>
+            <p>劍湖山世界積極因應國際觀光客與大陸人士來台質與量的觀光需求，遊樂業界第一品牌的『劍湖山世界主題樂園』，隆重推出高價值與高品質五星級的『劍湖山渡假大飯店』，以發展商務休閒、觀光旅遊與購物娛樂，深耕雲林接軌國際。</p>
+            <p><a class="btn btn-primary" href="http://fancyworld.janfusun.com.tw/about.aspx?DataKey=4&Title=Hato%E5%AE%B6%E6%97%8F">關於劍湖山家族 &raquo;</a></p>
+        </div>
+
+        <div class="col-md-4">
+            <h2>關於企業</h2>
+            <p>劍湖山渡假大飯店</p>
+            <p><a class="btn btn-primary" href="http://www.jrhotel.com.tw/">飯店詳情 &raquo;</a></p>
+        </div>
     </div>
-</div>

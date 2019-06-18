@@ -3,78 +3,79 @@
 @{
     ViewBag.Title = "會員詳細資料";
 }
+<body background="http://sheng.phy.nknu.edu.tw/shengwjs08MY/back-120.gif">
 
-<h2>會員詳細資料</h2>
+    <h2>會員詳細資料</h2>
 
-<div>
-    <h4>會員及訂單</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            姓名
-        </dt>
+    <div>
+        <h4>會員及訂單</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                姓名
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dt>
-           性別
-        </dt>
+            <dt>
+                性別
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sex)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Sex)
+            </dd>
 
-        <dt>
-            連絡電話
-        </dt>
+            <dt>
+                連絡電話
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-        <dt>
-            地址
-        </dt>
+            <dt>
+                地址
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-        <dt>
-            會員加入日期
-        </dt>
+            <dt>
+                會員加入日期
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.MemberDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.MemberDate)
+            </dd>
 
-        <dt>
-            會員訂單
-        </dt>
-        <dd>
-            <table class="table">
-                <tr>
-                    <th>票種</th>
-                    <th>張數</th>
-                </tr>
-                @foreach (var item in Model.Orders)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Ticket.Type)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Amount)
-                        </td>
+            <dt>
+                會員訂單
+            </dt>
+            <dd>
+                <table class="table">
+                    <tr class="bg-warning text-white">
+                        <th>票種</th>
+                        <th>張數</th>
                     </tr>
-                }
-            </table>
-        </dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("修改", "Edit", new { id = Model.MemberID }) |
-    @Html.ActionLink("返回會員資料", "Index")
-</p>
+                    @foreach (var item in Model.Orders)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Ticket.Type)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Amount)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("修改", "Edit", new { id = Model.MemberID }) |
+        @Html.ActionLink("返回會員資料", "Index")
+    </p>

@@ -4,61 +4,61 @@
 @{
     ViewBag.Title = "訂單資料";
 }
+<body background="http://sheng.phy.nknu.edu.tw/shengwjs08MY/back-133.gif">
+    <h2>訂單資料</h2>
 
-<h2>訂單資料</h2>
-
-<p>
-    @Html.ActionLink("新增訂單", "Create")
-</p>
-@using (Html.BeginForm())
-{
-<p>
-    依會員姓名、票別搜尋: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-    <input type="submit" value="查詢" />
-</p>
-
-}
-
-<table class="table">
-
-    <tr class="bg-warning text-white">
-        <th>
-            @Html.ActionLink("會員姓名", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            @Html.ActionLink("票別", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-
-        <th>
-            購買數量
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
+    <h4>
+        @Html.ActionLink("新增訂單", "Create")
+    </h4>
+    @using (Html.BeginForm())
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Member.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ticket.Type)
-            </td>
+        <p>
+            依會員姓名、票別搜尋: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+            <input class="btn btn-danger" type="submit" value="查詢" />
+        </p>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.ActionLink("修改", "Edit", new { id = item.OrderID }) |
-                @Html.ActionLink("訂單詳細資料", "Details", new { id = item.OrderID }) |
-                @Html.ActionLink("刪除", "Delete", new { id = item.OrderID })
-            </td>
-        </tr>
     }
 
-</table>
-<br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    <table class="table">
 
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        <tr class="bg-warning text-white">
+            <th>
+                @Html.ActionLink("會員姓名", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("票別", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                購買數量
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Member.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket.Type)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.ActionLink("修改", "Edit", new { id = item.OrderID }) |
+                    @Html.ActionLink("訂單詳細資料", "Details", new { id = item.OrderID }) |
+                    @Html.ActionLink("刪除", "Delete", new { id = item.OrderID })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+        new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
